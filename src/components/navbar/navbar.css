@@ -1,0 +1,146 @@
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5% 7px 5%;
+    background-color: #2b303079;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 200;
+}
+
+.left_nav {
+    padding: 0 10px;
+    border-bottom: 1px solid black;
+}
+
+.left_nav span {
+    font-weight: bold;
+    font-size: 20px;
+    color: gold;
+}
+
+.right_nav {
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.nav_links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+     padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.nav_links ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav_links ul li {
+    cursor: pointer;
+    color: gainsboro;
+}
+
+.theme_container {
+    width: 60px;
+    height: 25px;
+    background-color: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    position: relative;
+}
+
+#indicator {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 25px);
+    width: 25px;
+    height: 25px;
+    /* margin-left: 0.5px; */
+    background-color: darkorange;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+#indicator.bright {
+    left: 0;
+}
+
+#sun {
+    color: yellow;
+}
+
+#moon {
+    color: white;
+}
+
+#menu_box {
+    display: none;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: gold;
+    margin-left: 20px;
+    margin-top: 3px;
+    transition: all 0.5s;
+}
+
+#menu_box.clicked .bar:nth-child(1) {
+    transform: translateY(6px) rotate(135deg);
+}
+
+#menu_box.clicked .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#menu_box.clicked .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-135deg);
+}
+
+
+@media screen and (max-width: 600px) {
+    #menu_box {
+        display: block;
+    }
+    .nav_links {
+        position: absolute;
+        top: 70px;
+        right: -80%;
+        background-color: #000;
+        width: 200px;
+        height: 200px;
+        padding: 25px 10px;
+        transition: all 0.5s ease-in-out;
+    }
+    .nav_links.show {
+        right: 8%;
+    }
+
+    .nav_links ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .nav_links ul li {
+        text-align: center;
+    }
+}
+
+

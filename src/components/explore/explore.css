@@ -1,0 +1,12 @@
+
+.explore_section {
+    width: 100%;
+    /* display: grid;
+    grid-template-columns: auto; */
+}
+
+.card {
+    width: 250px;
+    height: 200px;
+    border: 1px solid white;
+}
